@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ViewButton from "./ViewButton";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import useWindowDimensions from "../hooks/useWindowDimension";
 
 

@@ -22,6 +22,7 @@ const A = styled.div`
 
     @media (min-width : 375px) and (max-width : 767px) {
             padding-top: 0;
+            font-family: "League Spartan";
             border: none;
             font-weight: 700;
             font-size: 15px;

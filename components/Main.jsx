@@ -4,9 +4,6 @@ import PlanetDetailsContainer from "./PlanetDetailsContainer";
 import SideInformations from "./SideInformation";
 import ViewButtonContainer from "./ViewButtonContainer";
 import PlanetHero from "./PlanetHero";
-import { useContext } from "react";
-import { ToggleHamburgerMenuContext } from "./Layout";
-
 
 const MainStyle = styled.div`
     padding-inline: 165px;
@@ -15,31 +12,19 @@ const MainStyle = styled.div`
 
     @media (min-width : 768px) and (max-width : 1439px) {
        padding-inline : 39px;
+       margin-bottom: 14px;
     }
 
-    
-
-    
-    ${props => props.isClicked ? `
-    &::before {
-        @media (min-width : 375px) and (max-width : 767px) {
-            content : "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            background-color: #070724;
-            z-index: 100;
-        }
+    @media (min-width : 375px) and (max-width : 767px) {
+       padding-inline : 0px;
+       margin-top: 0px;
+       margin-bottom: 20px;
+       overflow : hidden;
     }
-    ` : null}
     
-    
-   
-
 `
 
 const Container = styled.div`
-    /* height: 700px; */
     display: grid;
     grid-template-columns: 68.4% 31.6%;
     grid-template-rows: 260px 260px 215px;
@@ -60,11 +45,8 @@ const Container = styled.div`
 
 export default function Main() {
 
-    const { isClicked } = useContext(ToggleHamburgerMenuContext) 
-
-
   return (
-    <MainStyle isClicked = {isClicked}>
+    <MainStyle>
         <Container> 
             <PlanetHero />
             <SideInformations  />
