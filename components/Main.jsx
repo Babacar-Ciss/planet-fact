@@ -17,22 +17,19 @@ const MainStyle = styled.div`
        padding-inline : 39px;
     }
 
-    @media (min-width : 375px) and (max-width : 767px) {
-        padding-inline : 0px;
-        margin-top: 0px;
-        background-color: #070724;
-        position: relative;
-    }
+    
 
     
     ${props => props.isClicked ? `
     &::before {
-        content : "";
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background-color: #070724;
-        z-index: 100;
+        @media (min-width : 375px) and (max-width : 767px) {
+            content : "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background-color: #070724;
+            z-index: 100;
+        }
     }
     ` : null}
     
