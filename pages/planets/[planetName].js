@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Main from '../../components/Main';
-import { useState, useEffect, createContext, useContext } from 'react';
-import { ToggleHamburgerMenuContext } from "../../components/Layout";
+import { useState, useEffect, createContext } from 'react';
+
 
 
 export async function getStaticProps ({params}) {
@@ -37,7 +37,6 @@ export const GlobalContext = createContext();
 
 const Planet = ({planet}) => {
 
-    const {isClicked} = useContext(ToggleHamburgerMenuContext);
 
     const [data, setData] = useState(planet)
     const [planetSelected, setPlanetSelected] = useState("planet");
@@ -57,20 +56,12 @@ const Planet = ({planet}) => {
             <Head>
                 <link href="https://fonts.googleapis.com/css2?family=Antonio&family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" /> 
             </Head>
-
-            {
-                !isClicked ? (<Main data = {data} 
+            
+                <Main data = {data} 
                     planetSelected = {planetSelected}
                     setPlanetSelected = {setPlanetSelected}
                     typeView = {typeView}
-                    setTypeView = {setTypeView}/>)  : null
-
-
-            }
-
-
-
-
+                    setTypeView = {setTypeView}/>
             
         </>
         </GlobalContext.Provider>
