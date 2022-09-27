@@ -6,7 +6,7 @@ import LinkToPlanet from './LinkToPlanet';
 
 const MenuMobileStyle = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 130vh;
     padding-top: 27px;
     background-color: #070724;
     z-index: 200;
